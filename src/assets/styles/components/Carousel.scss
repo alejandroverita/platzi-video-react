@@ -24,3 +24,7 @@
   transform: scale(1.5);
   opacity: 1;
 }
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
