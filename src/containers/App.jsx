@@ -13,7 +13,20 @@ const App = ()=>(
     <div className='App'>
         <Header />
         <Search />
-        <Categories>
+        <Categories title='Mi Lista'>
+            <Carousel>
+                <CarouselItem />
+                <CarouselItem />
+                <CarouselItem />
+            </Carousel>
+        </Categories>
+        <Categories title='Mis favoritos'>
+            <Carousel>
+                <CarouselItem />
+                <CarouselItem />
+            </Carousel>
+        </Categories>
+        <Categories title='Mis guardados'>
             <Carousel>
                 <CarouselItem />
             </Carousel>
