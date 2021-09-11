@@ -15,38 +15,41 @@ import '../assets/styles/App.scss';
 const API = 'http://localhost:3000/initalState'
 
 const App = ()=>{
-    const initialState = useInitialState(API);
-    return  initialState.length === 0 ? <h1>Loading...</h1> : (
-        <div className='App'>
-            <Header />
-            <Search />
+    const videos = useInitialState(API)
 
-            {initialState.mylist.length > 0 &&
-                <Categories title='Mi Lista'>
-                    <Carousel>
-                        <CarouselItem />
-                    </Carousel>
-                </Categories>
-            }
-            
-
-            <Categories title='Tendencias'>
-                <Carousel>
-                    {
-                        initialState.trends.map(item=>  
-                            <CarouselItem key={item.id} {...item} />
-                        )
-                    }
-                </Carousel>
-            </Categories>
-
-            <Categories title='Originales'>
-                <Carousel>
-                    <CarouselItem />
-                </Carousel>
-            </Categories>
+    return (
+        <div>
+            <Header/>
+            <Search/>
+            {videos && Object.keys(videos).map(categorie => {
+                if (videos[categorie].length) {
+                    return (
+                        <Categories
+                            title={categorie}
+                            key={categorie}
+                        >
+                            <Carousel>
+                                {videos[categorie].map(video => {
+                                    return (
+                                        <CarouselItem 
+                                            cover={video.cover}
+                                            alt={video.title}
+                                            key={video.id}
+                                            year={video.year}
+                                            title={video.title}
+                                            content={video.contentRating}
+                                            duration={video.duration}
+                                        />
+                                    )
+                                })}
+                            </Carousel>
+                        </Categories>
+                    )
+                }
+                return null
+            })}
             <Footer/>
         </div>
-    );
+    )
 }
 export default App;
