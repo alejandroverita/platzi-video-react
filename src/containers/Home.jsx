@@ -17,9 +17,8 @@ const API = 'http://localhost:3000/initalState'
 const App = ()=>{
     const videos = useInitialState(API)
 
-    return (
-        <div>
-            <Header/>
+    return(
+        <React.Fragment>
             <Search/>
             {videos && Object.keys(videos).map(categorie => {
                 if (videos[categorie].length) {
@@ -48,8 +47,7 @@ const App = ()=>{
                 }
                 return null
             })}
-            <Footer/>
-        </div>
+        </React.Fragment>
     )
 }
 export default App;

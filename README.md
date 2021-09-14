@@ -79,3 +79,12 @@ React nos permite crear nuestros propios Hooks. Solo debemos seguir algunas conv
 - Los hooks siempre deben empezar con la palabra use: useAPI, useMovies, useWhatever.
 - Si nuestro custom hook nos permite consumir/interactuar con dos elementos (por ejemplo, title y setTitle), nuestro hook debe devolver un array.
 - Si nuestro custom hook nos permite consumir/interactuar con tres o más elementos (por ejemplo, name, setName, lastName, setLastName, etc.), nuestro hook debe devolver un objeto.
+
+### Container: 404 Not Found
+
+Es importante siempre tener una ruta que renderice un componente para las urls que no existan, debemos añadir esta ruta al final del Switch para que sea el caso por default.
+
+Fragment nos permite no añadir elementos extra al DOM, podemos utilizar Fragment de 2 maneras:
+
+1. Añadiendo el componente o .
+2. O implemente encapsulando nuestros elementos dentro de <>.
