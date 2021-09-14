@@ -40,7 +40,7 @@ module.exports={
                 test: /\.(png|gif|jpg|svg)$/,
                 use: [
                 {
-                    loader: 'file-loader',
+                    'loader': 'file-loader',
                     options: { name: 'assets/[hash].[ext]' },
                 }
                 ],
@@ -56,5 +56,5 @@ module.exports={
         new MiniCssExtractPlugin({
             filename: 'assets/[name].css',
         }),
-    ]
+    ],
 };
