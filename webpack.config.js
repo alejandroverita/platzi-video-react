@@ -47,6 +47,10 @@ module.exports={
             }
         ]
     },
+    //prepara el entorno de desarrollo local para el manejo de rutas
+    devServer: {  
+        historyApiFallback: true,  
+    },
     plugins:[
         new HtmlWebPackPlugin({
             template: './public/index.html',
