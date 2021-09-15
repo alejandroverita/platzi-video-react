@@ -88,3 +88,32 @@ Fragment nos permite no añadir elementos extra al DOM, podemos utilizar Fragmen
 
 1. Añadiendo el componente o .
 2. O implemente encapsulando nuestros elementos dentro de <>.
+
+### Qué es Redux
+
+Redux es una librería escrita en JavaScript, basada en la arquitectura Flux y creada por Dan Abramov, se basa en 3 principios fundamentales:
+
+1. Solamente hay una fuente de la verdad.
+2. El estado es de solo lectura.
+3. Solamente podemos utilizar funciones puras.
+
+Nuestra UI va a activar una action, esta action va a ejecutar un reducer para modificar la información del store, y al actualizarse el store la UI se va a modificar.
+
+### Instalación de Redux
+
+Vamos a instalar las dependencias para poder trabajar con Redux:
+
+`npm install redux react-redux --save`
+
+Dentro de nuestro proyecto vamos a crear una carpeta para nuestros actions y otra para los reducers que utilizaremos en Redux.
+
+El paquete react-redux nos proporciona un Provider para poder encapsular nuestros componentes por medio de un connect para poder transmitir la información que necesitemos del store a cada componente.
+
+### Creando el Store de Redux
+
+Para crear un Store necesitamos llamar a la función createStore del paquete de redux pasándole los parámetros del reducer y initialState.
+
+Para conectar un componente a Redux vamos a necesitar importar connect de react-redux, connect va a aceptar dos parámetros:
+
+1. mapStateToProps: es una función que le va a indicar al provider qué información necesitamos del store.
+2. mapDispatchToProps: es un objeto con las distintas funciones para ejecutar una action en Redux.
