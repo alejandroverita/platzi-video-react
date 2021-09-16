@@ -1,12 +1,16 @@
+import { actions } from '../actions';
+
 const reducer = (state, action) => {
     
     switch(action.type){
-        case 'SET_FAVORITE':
+        case actions.setFavorite:
+            console.log('action -> ', action);
             return {
                 ...state,
                 myList:[...state.myList, action.payload]
             }
-        case 'DELETE_FAVORITE':
+        case actions.deleteFavorite:
+            console.log('state.myList -> ', state.myList);
             return {
                 ...state,
                 myList: state.myList.filter(items => items.id !== action.payload)

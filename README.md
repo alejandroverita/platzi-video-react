@@ -109,6 +109,15 @@ Dentro de nuestro proyecto vamos a crear una carpeta para nuestros actions y otr
 
 El paquete react-redux nos proporciona un Provider para poder encapsular nuestros componentes por medio de un connect para poder transmitir la información que necesitemos del store a cada componente.
 
+### Creando los reducers
+
+Un action de Redux va a contener dos elementos:
+
+- `type:` para indicar la acción que se va a ejecutar.
+- `payload:` es la información que estamos mandando al reducer.
+
+Dentro de los reducers usaremos un switch para separar la lógica por cada tipo de acción que tendremos en Redux.
+
 ### Creando el Store de Redux
 
 Para crear un Store necesitamos llamar a la función createStore del paquete de redux pasándole los parámetros del reducer y initialState.
