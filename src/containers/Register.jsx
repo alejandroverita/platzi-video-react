@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { connect } from 'react-redux';
+import { registerRequest } from '../actions';
 import {Link} from 'react-router-dom';
 
 import '../assets/styles/components/Register.scss'
 
-const Register = () => {
+const Register = (props) => {
 
   const [form, setForm] = useState({
     email: '',
@@ -20,10 +22,11 @@ const Register = () => {
     console.log(event.target.value);
   };
   
-  const handleSubmit = event => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(form);
-  }
+    props.registerRequest(form);
+    props.history.push('/');
+  };
   
   return ( 
     <section className="register">
@@ -60,4 +63,11 @@ const Register = () => {
   )
 }
 
-export default Register;
+// 4. Establecer que acciones llevará a cabo este componente en el store
+
+const mapDispatchToProps = {
+  registerRequest,
+};
+
+// 3. Conectar el componente con el store
+export default connect (null, mapDispatchToProps)(Register);
