@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import {connect} from 'react-redux';
 
+// import Header from '../Components/Header';
 import Search from '../Components/Search';
 import Categories from '../Components/Categories';
 import Carousel from '../Components/Carousel';
 import CarouselItem from '../Components/CarouselItem';
 
 /* Hooks */
-import useInitialState from '../Hooks/useInitialState';
+// import useInitialState from '../Hooks/useInitialState';
 
 /* Styles */
 import '../assets/styles/App.scss';
@@ -17,7 +18,8 @@ const Home = ({myList, trends, originals})=>{
 
     return(
         <React.Fragment>
-            <Search />
+           
+            <Search isHome />
 
             <Categories title='Mi lista'>
                 <Carousel>

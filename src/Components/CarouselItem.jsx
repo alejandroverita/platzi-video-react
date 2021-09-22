@@ -11,7 +11,7 @@ import removeIcon from '../assets/static/remove-icon.png';
 
 const CarouselItem = (props) => {
     console.log(props);
-    const { id, cover, title, year, contentRating, duration, isList} = props;
+    const { id, cover, title, year, contentRating, duration, isList, slug, source} = props;
 
     const handleSetFavorite = () => {
         props.setFavorite({
@@ -36,7 +36,7 @@ const CarouselItem = (props) => {
                         />
                     </Link>
                 {
-                    !isList ?
+                    isList ?
                         <img className="carousel-item__details--img" onClick= {()=>handleDeleteFavorite(id)} src={removeIcon} alt="Remove Icon" />
                     : 
                         <img className="carousel-item__details--img" onClick= {handleSetFavorite} src={plusIcon} alt="Plus Icon" />
