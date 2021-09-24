@@ -126,3 +126,22 @@ Para conectar un componente a Redux vamos a necesitar importar connect de react-
 
 1. mapStateToProps: es una función que le va a indicar al provider qué información necesitamos del store.
 2. mapDispatchToProps: es un objeto con las distintas funciones para ejecutar una action en Redux.
+
+### Debug con Redux Devtools
+
+Redux Dev Tools nos va a servir mucho para entender mejor el flujo de nuestra información en nuestra aplicación y poder realizar debugging de manera sencilla.
+
+Solamente necesitas instalar la extensión según el navegador que tengas:
+
+- Chrome
+- Firefox
+
+Una vez instalado dentro de nuestro index.js vamos a añadir el siguiente código:
+
+// importamos compose  
+ import { createStore, compose } from ‘redux’;  
+ ...
+
+const composeEnhancers = window.**REDUX_DEVTOOLS_EXTENSION_COMPOSE** || compose
+
+const store = createStore(reducer, initialState, composeEnhancers

@@ -14,8 +14,8 @@ const Header = (props)=> {
     const {user} = props;
 
     const userLogedIn = () => user.email !== undefined; /* Verificamos si nuestro usuario ya tiene un email registrado en su sesion */
-
     const hasUser = Object.keys(user).length > 0;
+    
 
     const handleLogout = () => {
         props.logoutRequest({})/* Le pasamos un objeto vacio como payload que sera lo que se establezca en el reducer */
@@ -44,7 +44,7 @@ const Header = (props)=> {
                     <p>Perfil</p>
                 </div>
                 {
-                    userLogedIn ?
+                    hasUser ?
                         <ul>
                             <li><p>Bienvenido <b>{user.name}</b></p></li> 
                             <li><p>Mi perfil</p></li>
